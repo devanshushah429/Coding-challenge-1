@@ -20,7 +20,7 @@
   --fs-800: 2.5rem;
   --fs-900: 3.5rem;
 
-  --fs-body: var(--fs-400);
+  --fs-body: var(--fs-600);
   --fs-primary-heading: var(--fs-800);
   --fs-secondary-heading: var(--fs-700);
   --fs-nav: var(--fs-500);
@@ -108,7 +108,7 @@ body {
   font-size: var(--fs-body);
   font-family: var(--ff-body);
   color: var(--clr-primary-black);
-  padding: var(--size-600) var(--size-800);
+  padding: var(--size-600) var(--size-900);
 }
 
 p:not([class]) {
@@ -133,6 +133,10 @@ button {
 
 .nav-list a {
   text-decoration: none;
+  color: var(--clr-secondary-black);
+}
+
+.nav-list a[active] {
   color: var(--clr-primary-black);
 }
 
@@ -227,21 +231,19 @@ button {
 
 /* interior design */
 .interior-design-section-1 {
-  /* border: 1px solid red; */
   margin-block: var(--size-800);
   display: flex;
-  padding-left: 20px;
   justify-content: space-between;
 }
 
-@media (max-width:60em) {
+@media (max-width:70em) {
   .interior-design-section-1 {
+    display: flex;
     text-align: center;
     margin-block: var(--size-800);
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding-left: 20px;
-    justify-content: center;
+    align-items: center;
   }
 
   .interior-design-section-1 .text-section h1 {
@@ -251,6 +253,7 @@ button {
   .interior-design-section-1 div {
     padding-bottom: var(--size-500);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -263,6 +266,81 @@ button {
 
 .interior-design-section-1 h1 {
   font-size: 100px;
+  margin-bottom: 50px;
+}
+
+
+.interior-design-section-2 {
+  display: flex;
+  position: relative;
+  bottom: 10rem;
+  justify-content: space-between;
+}
+
+.interior-design-section-2 img {
+  position: relative;
+  right: 50px;
+}
+
+.interior-design-section-2 .box {
+  position: relative;
+  top: 180px;
+  right: 70px;
+  height: 200px;
+  width: 200px;
+  border: 1px solid var(--clr-primary-black);
+}
+
+.interior-design-score h1 {
+  font-size: 50px;
+}
+
+.interior-design-score {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  color: var(--clr-secondary-black);
+  font-weight: 400;
+}
+
+.interior-design-section-2 .text-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.interior-design-section-2 .text-section button {
+  width: 15rem;
+  height: 4rem;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+@media(max-width:90em) {
+  .interior-design-section-2 {
+    position: static;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .interior-design-section-2 .text-section {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  @media(max-width:60em) {
+    .interior-design-section-2 .text-section {
+      flex-direction: column;
+      height: 200px;
+      align-items: center;
+    }
+  }
+
+  .fancy-image-1 {
+    display: none;
+  }
 }
 
 /* utility classes */
@@ -281,4 +359,8 @@ button {
 
 .fw-400 {
   font-weight: 500;
+}
+
+.d-flex {
+  display: flex;
 }
