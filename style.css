@@ -2,6 +2,8 @@
   --clr-primary-black: #1F1F1F;
   --clr-secondary-black: #545454;
 
+  --clr-primary-white: #FFFFFF;
+
   --ff-primary: "Inter", sans-serif;
   --ff-body: var(--ff-primary);
   --ff-heading: serif;
@@ -102,9 +104,31 @@ svg {
 }
 
 body {
+  font-weight: 500;
   font-size: var(--fs-body);
   font-family: var(--ff-body);
   color: var(--clr-primary-black);
+  padding: var(--size-600) var(--size-800);
+}
+
+p:not([class]) {
+  opacity: 0.7;
+  max-width: 32ch;
+}
+
+p[data-width="wide"] {
+  max-width: 50ch;
+}
+
+button {
+  padding: var(--size-100) var(--size-500);
+  color: var(--clr-primary-white);
+  background-color: var(--clr-primary-black);
+  border-radius: 4px;
+}
+
+.logo {
+  aspect-ratio: 1 / 2;
 }
 
 .nav-list a {
@@ -116,18 +140,32 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 45px 106px;
+}
 
+.mobile-nav-toggle {
+  display: none;
 }
 
 .nav-list {
+  display: flex;
   justify-content: space-between;
   gap: var(--size-800);
-  display: flex;
+}
+
+.nav-list button {
+  display: none;
 }
 
 
 @media(max-width: 60em) {
+
+  .desktop-sign-up {
+    display: none;
+  }
+
+  .nav-list button {
+    display: block;
+  }
 
   .primary-header[data-overlay] {
     position: relative;
@@ -160,18 +198,15 @@ body {
     font-weight: var(--fw-bold);
   }
 
-
-
   .primary-navigation[data-visible] {
     display: block;
-
   }
 
   .mobile-nav-toggle {
     display: block;
     position: fixed;
-    top: var(--size-600);
-    right: var(--size-400);
+    top: var(--size-700);
+    right: var(--size-700);
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -190,6 +225,46 @@ body {
   }
 }
 
+/* interior design */
+.interior-design-section-1 {
+  /* border: 1px solid red; */
+  margin-block: var(--size-800);
+  display: flex;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+
+@media (max-width:60em) {
+  .interior-design-section-1 {
+    text-align: center;
+    margin-block: var(--size-800);
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    justify-content: center;
+  }
+
+  .interior-design-section-1 .text-section h1 {
+    font-size: 60px;
+  }
+
+  .interior-design-section-1 div {
+    padding-bottom: var(--size-500);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.interior-design-section-1 img {
+  height: 30em;
+  width: 30em;
+}
+
+.interior-design-section-1 h1 {
+  font-size: 100px;
+}
+
 /* utility classes */
 
 .visually-hidden {
@@ -202,4 +277,8 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.fw-400 {
+  font-weight: 500;
 }
